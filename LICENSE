@@ -1,0 +1,27 @@
+
+---
+
+# 9) `docs/sample_run_output.md` — an *example* run (clearly labeled)
+```markdown
+# Sample run output (EXAMPLE — run this locally to produce your real numbers)
+
+Command:
+python generate_synthetic_data.py --rows 100000 --out data/events.csv
+python etl_pipeline.py --input data/events.csv --out-dir output/parquet --chunk-size 20000
+
+Example console output:
+Pipeline complete. Stats:
+  rows: 100000
+  rows_kept: 99800
+  rows_dropped: 200
+  files_written: 5
+  elapsed_seconds: 18.47
+
+Filesystem:
+$ du -h data/events.csv
+14M    data/events.csv
+$ du -h output/parquet
+2.0M   output/parquet
+
+Note: these example numbers are for illustration. Run the commands locally to obtain real measured metrics and replace them in this file before publishing.
+
